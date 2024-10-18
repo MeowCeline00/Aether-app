@@ -15,14 +15,18 @@ export default function Button({ label, onPress }: ButtonProps) {
   const [isPressed, setIsPressed] = useState(false);
 
   return (
-    <StyledView >
+    <StyledView className="w-40 items-center">  
       <StyledPressable
-        className={`items-center ${isPressed ? 'bg-gray-400' : 'bg-gray-200'}`}
+        className={`items-center justify-center w-full h-14 rounded-lg ${isPressed ? 'bg-gray-400' : 'bg-white'}`}
         onPressIn={() => setIsPressed(true)}
         onPressOut={() => setIsPressed(false)}
         onPress={onPress}
+        style={{
+          borderWidth: 1,
+          borderColor: '#D1D1D1', 
+        }}
       >
-        <StyledText>{label}</StyledText>
+        <StyledText className="text-black font-medium">{label}</StyledText>
       </StyledPressable>
     </StyledView>
   );

@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import Header from '@/components/mycustom/molecule/Header';
 import Button from "@/components/mycustom/atom/Button";
 import Dialog from "@/components/mycustom/atom/Dialog";
+import { Link } from 'expo-router'; 
 import { styled } from 'nativewind';
 
 const StyledView = styled(View);
@@ -14,17 +15,25 @@ export default function MainContent() {
       <StyledView className="mt-4 mb-4">
         <Dialog message="hello ABC" />
       </StyledView>
-      <StyledView className="flex-row justify-around mt-4 mb-4 w-32 p-3 rounded-lg text-gray-800 font-medium">
+
+      <StyledView className="flex-row justify-around mt-4 mb-4">
         <Button label="Forms" onPress={() => {}} />
         <Button label="Upload File" onPress={() => {}} />
       </StyledView>
-      <StyledView className="flex-1 px-4 space-y-4">
-        <StyledView className="h-16 bg-gray-300 rounded-lg">
-          <Button label="Test UIs" onPress={() => {}} />
+
+      <StyledView className="flex-2 justify-center items-center px-4 space-y-4">
+        <StyledView className="h-16 w-full justify-center items-center">
+          <Link href="/testPage" asChild>
+            <Button
+              label="Test UIs"
+              onPress={() => console.log('Navigating to Test UIs page')}
+            />
+          </Link>
         </StyledView>
-        <StyledView className="h-16 bg-gray-300 rounded-lg" />
-        <StyledView className="h-16 bg-gray-300 rounded-lg" />
-        <StyledView className="h-16 bg-gray-300 rounded-lg" />
+
+        <StyledView className="h-16 w-full bg-gray-300 rounded-lg" />
+        <StyledView className="h-16 w-full bg-gray-300 rounded-lg" />
+        <StyledView className="h-16 w-full bg-gray-300 rounded-lg" />
       </StyledView>
     </StyledView>
   );
