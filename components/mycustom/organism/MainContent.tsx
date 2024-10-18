@@ -14,11 +14,14 @@ export default function MainContent() {
       <StyledView className="mt-4 mb-4">
         <Dialog message="hello ABC" />
       </StyledView>
-      <StyledView className="flex-row justify-around mt-4 mb-4">
+      <StyledView className="flex-row justify-around mt-4 mb-4 w-32 p-3 rounded-lg text-gray-800 font-medium">
         <Button label="Forms" onPress={() => {}} />
         <Button label="Upload File" onPress={() => {}} />
       </StyledView>
       <StyledView className="flex-1 px-4 space-y-4">
+        <StyledView className="h-16 bg-gray-300 rounded-lg">
+          <Button label="Test UIs" onPress={() => {}} />
+        </StyledView>
         <StyledView className="h-16 bg-gray-300 rounded-lg" />
         <StyledView className="h-16 bg-gray-300 rounded-lg" />
         <StyledView className="h-16 bg-gray-300 rounded-lg" />
