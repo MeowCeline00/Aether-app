@@ -12,6 +12,7 @@ export default function TestUIs() {
   const [isHomePressed, setHomePressed] = useState(false);
   const [isPhotoPressed, setPhotoPressed] = useState(false);
   const [isProfilePressed, setProfilePressed] = useState(false);
+  const [isFillingIconPressed, setFillingIconPressed] = useState(false); 
 
   return (
     <>
@@ -72,6 +73,20 @@ export default function TestUIs() {
           }}
         >
           <Icon name="person-outline" fill="black" width={32} height={32} />
+        </StyledPressable>
+
+        {/* Filling Form Button */}
+        <StyledPressable
+          className={`items-center justify-center w-20 h-20 rounded-full ${isFillingIconPressed ? 'bg-gray-400' : 'bg-white'}`}
+          onPressIn={() => setFillingIconPressed(true)}
+          onPressOut={() => setFillingIconPressed(false)}
+          onPress={() => console.log('Filling icon pressed!')}
+          style={{
+            borderWidth: 1,
+            borderColor: '#D1D1D1',
+          }}
+        >
+          <Icon name="edit-2-outline" fill="black" width={32} height={32} />
         </StyledPressable>
 
       </StyledView>
