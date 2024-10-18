@@ -39,12 +39,15 @@ export default function TestUIs() {
   const [isPeopleButtonPressed, setPeopleButtonPressed] = useState(false); 
   const [isBackButtonPressed, setBackButtonPressed] = useState(false);
   const [isCloseButtonPressed, setCloseButtonPressed] = useState(false);
+  const [isConfirmButtonPressed, setConfirmButtonPressed] = useState(false);
+  const [isRejectButtonPressed, setRejectButtonPressed] = useState(false);
+  const [isPersonAddButtonPressed, setPersonAddButtonPressed] = useState(false);
+  const [isTrashButtonPressed, setTrashButtonPressed] = useState(false);
 
   return (
     <>
       <IconRegistry icons={EvaIconsPack} /> 
       
-      {/* ScrollView makes the screen scrollable */}
       <ScrollView contentContainerStyle={{ paddingVertical: 20 }}>
 
         <StyledView className="justify-start items-center space-y-4 pt-2.5">
@@ -115,13 +118,45 @@ export default function TestUIs() {
 
           {/* Close Button */}
           <IconButton
-            iconName="close-outline"
+            iconName="close-circle-outline"
             isPressed={isCloseButtonPressed}
             setPressed={setCloseButtonPressed}
             onPress={() => console.log('Close button pressed!')}
           />
 
-          {/* Add more buttons here if needed */}
+          {/* Confirm Button */}
+          <IconButton
+            iconName="checkmark-outline"
+            isPressed={isConfirmButtonPressed}
+            setPressed={setConfirmButtonPressed}
+            onPress={() => console.log('Confirm button pressed!')}
+          />
+
+          {/* Reject Button */}
+          <IconButton
+            iconName="close-outline"
+            isPressed={isRejectButtonPressed}
+            setPressed={setRejectButtonPressed}
+            onPress={() => console.log('Reject button pressed!')}
+          />
+
+          {/* Person Add Button */}
+          <IconButton
+            iconName="person-add-outline"
+            isPressed={isPersonAddButtonPressed}
+            setPressed={setPersonAddButtonPressed}
+            onPress={() => console.log('Person add button pressed!')}
+          />
+
+           {/* Trash Button */}
+           <IconButton
+            iconName="trash-2-outline"
+            isPressed={isTrashButtonPressed}
+            setPressed={setTrashButtonPressed}
+            onPress={() => console.log('Trash button pressed!')}
+          />
+        
+
         </StyledView>
         
       </ScrollView>
