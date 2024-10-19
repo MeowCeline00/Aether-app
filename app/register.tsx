@@ -12,6 +12,8 @@ const StyledImage = styled(Image);
 export default function HomePage() {
   const [username, setUserName] = useState("");
   const [password, setPassWord] = useState("");
+  const [birthday, setBirthday] = useState("");
+  const [email, setEmail] = useState("");
   const router = useRouter();
   const handleLogIn = () => {
     router.push({pathname:"/homePage", params:{username}})
@@ -27,9 +29,21 @@ export default function HomePage() {
       </StyledView>
       <StyledView className="w-full h-2/3 bg-gray-300 rounded-t-3xl p-8 items-center">
         <StyledTextInput
-          placeholder="username"
+          placeholder="Name"
           value={username}
           onChangeText={setUserName}
+          className="w-4/5 h-12 rounded-full bg-white px-4 mb-4"
+        ></StyledTextInput>
+        <StyledTextInput
+          placeholder="Birthday"
+          value={birthday}
+          onChangeText={setBirthday}
+          className="w-4/5 h-12 rounded-full bg-white px-4 mb-4"
+        ></StyledTextInput>
+        <StyledTextInput
+          placeholder="Email"
+          value={email}
+          onChangeText={setEmail}
           className="w-4/5 h-12 rounded-full bg-white px-4 mb-4"
         ></StyledTextInput>
         <StyledTextInput
@@ -39,16 +53,7 @@ export default function HomePage() {
           className="w-4/5 h-12 rounded-full bg-white px-4 mb-4"
         ></StyledTextInput>
         <StyledPressable className="w-2/5 h-12 rounded-full bg-gray-400 justify-center items-center mb-4" onPress={handleLogIn}>
-          <StyledText className="text-lg">log in</StyledText>
-        </StyledPressable>
-        <StyledPressable>
-          <StyledText>Continue as guest</StyledText>
-        </StyledPressable>
-        <StyledPressable onPress={() => router.push("/register")}>
-          <StyledText>
-            Don't have an account?{" "}
-            <StyledText className="font-bold underline">Create one</StyledText>
-          </StyledText>
+          <StyledText className="text-lg">Register</StyledText>
         </StyledPressable>
       </StyledView>
     </StyledView>
