@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Image, TextInput, Text, Pressable } from "react-native";
 import { styled } from "nativewind";
 import { useRouter } from "expo-router";
-import { LinearGradient } from "expo-linear-gradient";
+import { LinearGradient } from 'expo-linear-gradient';
 
 const StyledView = styled(View);
 const StyledImage = styled(Image);
@@ -10,23 +10,20 @@ const StyledTextInput = styled(TextInput);
 const StyledText = styled(Text);
 const StyledPressable = styled(Pressable);
 
-export default function HomePage() {
-  const [username, setUserName] = useState("");
-  const [password, setPassWord] = useState("");
+export default function RegisterPage() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [birthday, setBirthday] = useState("");
+  const [email, setEmail] = useState("");
   const router = useRouter();
 
-  const handleLogIn = () => {
+  const handleRegister = () => {
     router.push({ pathname: "/homePage", params: { username } });
-  };
-
-  // Function to handle continuing as a guest
-  const handleContinueAsGuest = () => {
-    router.push({ pathname: "/homePage" });
-  };
+  }
 
   return (
     <LinearGradient
-      colors={["#88B5DF", "#ffffff"]}
+      colors={["#88B5DF", "#ffffff"]} 
       start={{ x: 0, y: 0 }}
       end={{ x: 0, y: 0.8 }}
       style={{ flex: 1 }}
@@ -36,38 +33,40 @@ export default function HomePage() {
           <StyledImage
             source={require("@/images/aether_logo.png")}
             resizeMode="contain"
-            className="w-64 h-32"
+            className="w-64 h-32"  
           />
         </StyledView>
         <StyledView className="w-full px-8">
           <StyledTextInput
             placeholder="Username"
             value={username}
-            onChangeText={setUserName}
+            onChangeText={setUsername}
+            className="mb-4 h-12 bg-white rounded-full px-4"
+          />
+          <StyledTextInput
+            placeholder="Birthday"
+            value={birthday}
+            onChangeText={setBirthday}
+            className="mb-4 h-12 bg-white rounded-full px-4"
+          />
+          <StyledTextInput
+            placeholder="Email"
+            value={email}
+            onChangeText={setEmail}
             className="mb-4 h-12 bg-white rounded-full px-4"
           />
           <StyledTextInput
             placeholder="Password"
             secureTextEntry
             value={password}
-            onChangeText={setPassWord}
+            onChangeText={setPassword}
             className="mb-4 h-12 bg-white rounded-full px-4"
           />
           <StyledPressable
             className="bg-blue-500 h-12 rounded-full justify-center items-center mb-4"
-            onPress={handleLogIn}
+            onPress={handleRegister}
           >
-            <StyledText className="text-white text-lg">Sign In</StyledText>
-          </StyledPressable>
-          <StyledPressable onPress={handleContinueAsGuest}>
-            <StyledText className="text-center text-lg underline">
-              Continue as guest
-            </StyledText>
-          </StyledPressable>
-          <StyledPressable onPress={() => router.push("/register")}>
-            <StyledText className="text-center text-sm mt-2">
-              Don't have an account? <StyledText className="font-bold underline">Create one.</StyledText>
-            </StyledText>
+            <StyledText className="text-white text-lg">Register</StyledText>
           </StyledPressable>
         </StyledView>
       </StyledView>

@@ -3,6 +3,7 @@ import { ScrollView, Pressable, View, GestureResponderEvent } from 'react-native
 import { Icon, IconRegistry } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { styled } from 'nativewind';
+import { LinearGradient } from 'expo-linear-gradient';
 
 interface IconButtonProps {
   iconName: string;
@@ -46,6 +47,10 @@ export default function TestUIs() {
 
   return (
     <>
+       <LinearGradient
+      colors={['#ffffff', '#c4d3ff']} 
+      style={{ flex: 1 }} 
+    >
       <IconRegistry icons={EvaIconsPack} /> 
       
       <ScrollView contentContainerStyle={{ paddingVertical: 20 }}>
@@ -160,6 +165,7 @@ export default function TestUIs() {
         </StyledView>
         
       </ScrollView>
+      </LinearGradient>
     </>
   );
 }

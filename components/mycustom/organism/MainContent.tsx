@@ -7,15 +7,16 @@ import { Link } from 'expo-router';
 import { styled } from 'nativewind';
 
 const StyledView = styled(View);
+type Props = {userName:any};
 
-export default function MainContent() {
+export default function MainContent({userName}:Props) {
   return (
     <StyledView className="flex-1 bg-white">
       <Header />
       <StyledView className="mt-4 mb-4">
-        <Dialog message="hello ABC" />
+        <Dialog message={userName} />
       </StyledView>
-
+      
       <StyledView className="flex-row justify-around mt-4 mb-4">
         <Button label="Forms" onPress={() => {}} />
         <Button label="Upload File" onPress={() => {}} />
