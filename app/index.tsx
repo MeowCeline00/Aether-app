@@ -19,6 +19,11 @@ export default function HomePage() {
     router.push({ pathname: "/homePage", params: { username } });
   };
 
+  // Function to handle continuing as a guest
+  const handleContinueAsGuest = () => {
+    router.push({ pathname: "/homePage" });
+  };
+
   return (
     <LinearGradient
       colors={["#88B5DF", "#ffffff"]}
@@ -54,17 +59,14 @@ export default function HomePage() {
           >
             <StyledText className="text-white text-lg">Sign In</StyledText>
           </StyledPressable>
-          <StyledPressable onPress={() => console.log("Continue as guest")}>
-            <StyledText className="text-center text-lg">
+          <StyledPressable onPress={handleContinueAsGuest}>
+            <StyledText className="text-center text-lg underline">
               Continue as guest
             </StyledText>
           </StyledPressable>
           <StyledPressable onPress={() => router.push("/register")}>
             <StyledText className="text-center text-sm mt-2">
-              Don't have an account?{" "}
-              <StyledText className="font-bold underline">
-                Create one.
-              </StyledText>
+              Don't have an account? <StyledText className="font-bold underline">Create one.</StyledText>
             </StyledText>
           </StyledPressable>
         </StyledView>

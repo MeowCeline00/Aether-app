@@ -15,11 +15,13 @@ export default function Index() {
   return (
     <>
        <LinearGradient
-      colors={['#ffffff', '#c4d3ff']} 
-      style={{ flex: 1 }} 
-    >
+        colors={["#88B5DF", "#ffffff"]} 
+        start={{ x: 0, y: 0 }}
+        end={{ x: 0, y: 0.8 }}
+        style={{ flex: 1 }}
+      >
         <IconRegistry icons={EvaIconsPack} />
-        <StyledView className="flex-1">
+        <StyledView className="flex-1 justify-center items-center p-4">
           <MainContent userName={username || "Guest"} />
           <BottomNav />
         </StyledView>
