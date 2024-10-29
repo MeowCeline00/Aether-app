@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Image, TextInput, Text, Pressable } from "react-native";
 import { styled } from "nativewind";
 import { useRouter } from "expo-router";
+import { LinearGradient } from 'expo-linear-gradient';
 
 const StyledView = styled(View);
 const StyledTextInput = styled(TextInput);
@@ -20,6 +21,10 @@ export default function HomePage() {
   }
 
   return (
+    <LinearGradient
+    colors={['#ffffff', '#c4d3ff']} 
+    style={{ flex: 1 }} 
+  >
     <StyledView className="flex-1 bg-white justify-between">
       <StyledView className="items-center mt-12">
         <StyledImage
@@ -57,5 +62,6 @@ export default function HomePage() {
         </StyledPressable>
       </StyledView>
     </StyledView>
+    </LinearGradient>
   );
 }
