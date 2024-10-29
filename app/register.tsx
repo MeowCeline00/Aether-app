@@ -5,63 +5,71 @@ import { useRouter } from "expo-router";
 import { LinearGradient } from 'expo-linear-gradient';
 
 const StyledView = styled(View);
+const StyledImage = styled(Image);
 const StyledTextInput = styled(TextInput);
 const StyledText = styled(Text);
 const StyledPressable = styled(Pressable);
-const StyledImage = styled(Image);
 
-export default function HomePage() {
-  const [username, setUserName] = useState("");
-  const [password, setPassWord] = useState("");
+export default function RegisterPage() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [birthday, setBirthday] = useState("");
   const [email, setEmail] = useState("");
   const router = useRouter();
-  const handleLogIn = () => {
-    router.push({pathname:"/homePage", params:{username}})
+
+  const handleRegister = () => {
+    router.push({ pathname: "/homePage", params: { username } });
   }
 
   return (
     <LinearGradient
-    colors={['#ffffff', '#c4d3ff']} 
-    style={{ flex: 1 }} 
-  >
-    <StyledView className="flex-1 bg-white justify-between">
-      <StyledView className="items-center mt-12">
-        <StyledImage
-          source={require("@/images/aether_logo.png")}
-          className="w-25 h-27"
-        />
+      colors={["#88B5DF", "#ffffff"]} 
+      start={{ x: 0, y: 0 }}
+      end={{ x: 0, y: 0.8 }}
+      style={{ flex: 1 }}
+    >
+      <StyledView className="flex-1 justify-center items-center p-4">
+        <StyledView className="items-center mb-24 mt-12">
+          <StyledImage
+            source={require("@/images/aether_logo.png")}
+            resizeMode="contain"
+            className="w-64 h-32"  
+          />
+        </StyledView>
+        <StyledView className="w-full px-8">
+          <StyledTextInput
+            placeholder="Username"
+            value={username}
+            onChangeText={setUsername}
+            className="mb-4 h-12 bg-white rounded-full px-4"
+          />
+          <StyledTextInput
+            placeholder="Birthday"
+            value={birthday}
+            onChangeText={setBirthday}
+            className="mb-4 h-12 bg-white rounded-full px-4"
+          />
+          <StyledTextInput
+            placeholder="Email"
+            value={email}
+            onChangeText={setEmail}
+            className="mb-4 h-12 bg-white rounded-full px-4"
+          />
+          <StyledTextInput
+            placeholder="Password"
+            secureTextEntry
+            value={password}
+            onChangeText={setPassword}
+            className="mb-4 h-12 bg-white rounded-full px-4"
+          />
+          <StyledPressable
+            className="bg-blue-500 h-12 rounded-full justify-center items-center mb-4"
+            onPress={handleRegister}
+          >
+            <StyledText className="text-white text-lg">Register</StyledText>
+          </StyledPressable>
+        </StyledView>
       </StyledView>
-      <StyledView className="w-full h-2/3 bg-gray-300 rounded-t-3xl p-8 items-center">
-        <StyledTextInput
-          placeholder="Name"
-          value={username}
-          onChangeText={setUserName}
-          className="w-4/5 h-12 rounded-full bg-white px-4 mb-4"
-        ></StyledTextInput>
-        <StyledTextInput
-          placeholder="Birthday"
-          value={birthday}
-          onChangeText={setBirthday}
-          className="w-4/5 h-12 rounded-full bg-white px-4 mb-4"
-        ></StyledTextInput>
-        <StyledTextInput
-          placeholder="Email"
-          value={email}
-          onChangeText={setEmail}
-          className="w-4/5 h-12 rounded-full bg-white px-4 mb-4"
-        ></StyledTextInput>
-        <StyledTextInput
-          placeholder="password"
-          value={password}
-          onChangeText={setPassWord}
-          className="w-4/5 h-12 rounded-full bg-white px-4 mb-4"
-        ></StyledTextInput>
-        <StyledPressable className="w-2/5 h-12 rounded-full bg-gray-400 justify-center items-center mb-4" onPress={handleLogIn}>
-          <StyledText className="text-lg">Register</StyledText>
-        </StyledPressable>
-      </StyledView>
-    </StyledView>
     </LinearGradient>
   );
 }
