@@ -3,6 +3,8 @@ import { View, Image, TextInput, Text, Pressable } from "react-native";
 import { styled } from "nativewind";
 import { useRouter } from "expo-router";
 import { LinearGradient } from 'expo-linear-gradient';
+import axios from "axios";
+import { error } from "console";
 
 const StyledView = styled(View);
 const StyledImage = styled(Image);
@@ -18,6 +20,17 @@ export default function RegisterPage() {
   const router = useRouter();
 
   const handleRegister = () => {
+    const userData = {
+      username: username,
+      useremail: email,
+      userpassword: password,
+    };
+    axios.post("http://10.0.0.120:5001/register", userData).then((res) => {
+      console.log(res.data);
+    }).catch((error) => {
+      console.log("error from register", error);
+    })
+
     router.push({ pathname: "/homePage", params: { username } });
   }
 
