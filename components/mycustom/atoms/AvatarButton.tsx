@@ -9,7 +9,7 @@ export default function AvatarButton() {
   return (
     <StyledPressable>
       <StyledImage
-        source={require('@/images/avatar.png')}
+        source={require('@/images/alice002.png')}
         className="w-16 h-16 rounded-full"
       />
     </StyledPressable>

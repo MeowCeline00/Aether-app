@@ -44,7 +44,7 @@ export default function RegisterPage() {
       <StyledView className="flex-1 justify-center items-center p-4">
         <StyledView className="items-center mb-24 mt-12">
           <StyledImage
-            source={require("@/assets/images/aether_logo.png")}
+            source={require("@/images/aether_logo.png")}
             resizeMode="contain"
             className="w-64 h-32"  
           />
