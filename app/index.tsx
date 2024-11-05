@@ -19,7 +19,6 @@ export default function HomePage() {
     router.push({ pathname: "/homePage", params: { username } });
   };
 
-  // Function to handle continuing as a guest
   const handleContinueAsGuest = () => {
     router.push({ pathname: "/homePage" });
   };
@@ -34,7 +33,7 @@ export default function HomePage() {
       <StyledView className="flex-1 justify-center items-center p-4">
         <StyledView className="items-center mb-24 mt-12">
           <StyledImage
-            source={require("@/images/aether_logo.png")}
+            source={require("@/assets/images/aether_logo.png")}
             resizeMode="contain"
             className="w-64 h-32"
           />
@@ -66,7 +65,8 @@ export default function HomePage() {
           </StyledPressable>
           <StyledPressable onPress={() => router.push("/register")}>
             <StyledText className="text-center text-sm mt-2">
-              Don't have an account? <StyledText className="font-bold underline">Create one.</StyledText>
+              Don't have an account?{" "}
+              <StyledText className="font-bold underline">Create one.</StyledText>
             </StyledText>
           </StyledPressable>
         </StyledView>

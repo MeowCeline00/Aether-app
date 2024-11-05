@@ -11,8 +11,8 @@ interface DialogProps {
 
 export default function Dialog({ message }: DialogProps) {
   return (
-    <StyledView className="bg-white p-4 rounded-lg shadow-md my-2">
-      <StyledText className="text-lg font-medium text-center">{message}</StyledText>
+    <StyledView className="p-4 bg-white rounded-lg shadow-md">
+      <StyledText className="text-center text-lg">{message}</StyledText>
     </StyledView>
   );
 }

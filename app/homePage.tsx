@@ -1,8 +1,8 @@
 import React from "react";
 import { IconRegistry } from "@ui-kitten/components";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
-import MainContent from "@/components/mycustom/organism/MainContent";
-import BottomNav from "@/components/mycustom/organism/BottomNav";
+import MainContent from "@/components/mycustom/organisms/MainContent";
+import BottomNav from "@/components/mycustom/organisms/BottomNav";
 import { View } from "react-native";
 import { styled } from "nativewind";
 import { useLocalSearchParams } from "expo-router";

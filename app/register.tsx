@@ -4,7 +4,6 @@ import { styled } from "nativewind";
 import { useRouter } from "expo-router";
 import { LinearGradient } from 'expo-linear-gradient';
 import axios from "axios";
-import { error } from "console";
 
 const StyledView = styled(View);
 const StyledImage = styled(Image);
@@ -25,18 +24,19 @@ export default function RegisterPage() {
       useremail: email,
       userpassword: password,
     };
-    axios.post("http://10.0.0.120:5001/register", userData).then((res) => {
-      console.log(res.data);
-    }).catch((error) => {
-      console.log("error from register", error);
-    })
-
-    router.push({ pathname: "/homePage", params: { username } });
-  }
+    axios.post("http://10.0.0.120:5001/register", userData)
+      .then((res) => {
+        console.log(res.data);
+        router.push({ pathname: "/homePage", params: { username } });
+      })
+      .catch((error) => {
+        console.log("error from register", error);
+      });
+  };
 
   return (
     <LinearGradient
-      colors={["#88B5DF", "#ffffff"]} 
+      colors={["#88B5DF", "#ffffff"]}
       start={{ x: 0, y: 0 }}
       end={{ x: 0, y: 0.8 }}
       style={{ flex: 1 }}
@@ -44,7 +44,7 @@ export default function RegisterPage() {
       <StyledView className="flex-1 justify-center items-center p-4">
         <StyledView className="items-center mb-24 mt-12">
           <StyledImage
-            source={require("@/images/aether_logo.png")}
+            source={require("@/assets/images/aether_logo.png")}
             resizeMode="contain"
             className="w-64 h-32"  
           />

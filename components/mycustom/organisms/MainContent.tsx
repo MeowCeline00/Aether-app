@@ -1,15 +1,15 @@
 import React from 'react';
 import { View } from 'react-native';
-import Header from '@/components/mycustom/molecule/Header';
-import Button from "@/components/mycustom/atom/Button";
-import Dialog from "@/components/mycustom/atom/Dialog";
+import Header from '@/components/mycustom/molecules/Header';
+import Button from "@/components/mycustom/atoms/Button";
+import Dialog from "@/components/mycustom/atoms/Dialog";
 import { Link } from 'expo-router'; 
 import { styled } from 'nativewind';
 
 const StyledView = styled(View);
-type Props = {userName:any};
+type Props = {userName: any};
 
-export default function MainContent({userName}:Props) {
+export default function MainContent({ userName }: Props) {
   return (
     <StyledView className="flex-1 bg-white">
       <Header />
